@@ -40,10 +40,10 @@ async function main() {
       // damn it took me some time to find out what 'conv_preds' meant
       const activation = net.infer(img, 'conv_preds');
       const result = await classifier.predictClass(activation);
-      console.log(result);
-
-      const Images = ['Fawzi', 'Kharty', 'Kharty et Fawzi'];
-      document.getElementById('div')!.innerText = `prediction : ${result.label}
+      const Images: any = ['Fawzi', 'Kharty', 'Kharty et Fawzi'];
+      document.getElementById('div')!.innerText = `prediction: ${
+        Images[result.label]
+      }\n
       probabilty: ${result.confidences[result.label]}
       `;
 
